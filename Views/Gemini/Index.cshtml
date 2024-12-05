@@ -1,0 +1,23 @@
+﻿@model ApiResponse
+
+@{
+    ViewData["Title"] = "Resposta da API Gemini";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" action="/Gemini/GetResponseFromGemini">
+    <div>
+        <label for="input">Digite sua pergunta:</label>
+        <input type="text" id="input" name="input" />
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h3>Resposta da API:</h3>
+        <p>@Model.Response</p> <!-- Exibe a resposta recebida da API -->
+    </div>
+}
